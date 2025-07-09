@@ -1,12 +1,17 @@
 from Models.Soigneur import Soigneur
 
 
-class Elephant:
-    __name = 'Test'
-    __appetite = 0
-    __happnies = 0
-    __alive = True
-    __caretaker = None
+class Animal:
+    def __init__(self, name, appetite, care_taker):
+        self.__name = name
+        self.__appetite = appetite
+        self.__happnies = 100
+        self.__alive = True
+        self.__caretaker = care_taker
+        self._thirst = 0
+
+    def observe_env(self):
+        self.__happnies += 1
 
     @property
     def name(self):

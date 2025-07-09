@@ -4,9 +4,8 @@ from Models.Enclos import Enclos
 from Models.Soigneur import Soigneur
 from Models.Elephant import Elephant
 
-elephant1 = Elephant()
-elephant1.name = "Dumbo"
 soigneur1 = Soigneur()
+elephant1 = Elephant("Dumbo", 0, soigneur1, 50)
 soigneur1.name = "jean"
 enclos1 = Enclos()
 enclos1.name = "Elephants"
