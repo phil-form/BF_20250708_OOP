@@ -1,3 +1,6 @@
+import random
+from abc import ABC, abstractmethod
+
 from Models.Soigneur import Soigneur
 
 
@@ -10,8 +13,18 @@ class Animal:
         self.__caretaker = care_taker
         self._thirst = 0
 
+    @abstractmethod
     def observe_env(self):
-        self.__happnies += 1
+        pass
+
+    @abstractmethod
+    def ramasser_objet(self):
+        pass
+
+    @property
+    @abstractmethod
+    def proba_deces(self):
+        pass
 
     @property
     def name(self):
@@ -48,6 +61,9 @@ class Animal:
     def eat(self):
         self.__hunger = 0
 
+    def drink(self):
+        self._thirst = 0
+
     def pet(self):
         self.__happnies = 100
 
@@ -59,3 +75,11 @@ class Animal:
         self.__happnies = 0
         self.__alive = True
         self.__hunger = 100
+
+    def comportement_hasard(self):
+        nbr = random.randint(1, 2)
+
+        if nbr == 1:
+            self.drink()
+        elif nbr == 2:
+            self.eat()

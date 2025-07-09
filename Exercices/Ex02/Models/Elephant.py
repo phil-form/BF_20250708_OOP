@@ -3,7 +3,7 @@ from Models.Soigneur import Soigneur
 
 class Elephant:
     __name = 'Test'
-    __appetite = 0
+    __hunger = 0
     __happnies = 0
     __alive = True
     __caretaker = None
@@ -18,7 +18,7 @@ class Elephant:
 
     @property
     def appetite(self):
-        return self.__appetite
+        return self.__hunger
 
     @property
     def happnies(self):
@@ -41,16 +41,16 @@ class Elephant:
 
 
     def eat(self):
-        self.__appetite = 0
+        self.__hunger = 0
 
     def pet(self):
         self.__happnies = 100
 
     @property
     def info(self):
-        return f'{self.name} | {self.__appetite} | {self.happnies} | {self.alive}'
+        return f'{self.name} | {self.__hunger} | {self.happnies} | {self.alive}'
 
     def reset(self):
         self.__happnies = 0
         self.__alive = True
-        self.__appetite = 100
+        self.__hunger = 100
